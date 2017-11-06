@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: http://squapl.com:8080/
+
+
+
+
+
+
+
