@@ -1,0 +1,177 @@
+
+
+<div class="container">
+  <div class="row">
+      <div class="col m10 offset-m1 s12">
+          <h2 class="center-align">Add Post</h2>
+          <div class="row">
+              <form (ngSubmit)="onSubmit()" #f="ngForm" class="col s12">
+              <!-- <form class="col s12"> -->
+           
+              <div class="row">
+                    <div class="col s12">
+                        <select name="language" 
+                        [(ngModel)] = "selectedlanguage"
+                        (change)="onChange($event)" ngModel class="browser-default">
+                            <option value="" disabled>Choose a Language</option>
+                            <option *ngFor="let language of languages" [value]="language.id">
+                              {{ language.value }}
+                            </option>
+                          </select>
+                    </div>
+                  
+                  </div>
+
+                  <div class="row">
+                    
+                  <div class="col s12">
+                      <select name="magazine" 
+                      [(ngModel)] = "selectedmagazine"
+                      required ngModel class="browser-default">
+                          <option value="" disabled>Choose a Magazine</option>
+                          <option *ngFor="let magazine of magazines" [ngValue]="magazine.name">
+                            {{ magazine.title }}
+                          </option>
+                        </select>
+                  </div>
+                
+                </div>
+
+                <div class="row">
+                    
+                  <div class="input-field col s12">
+                      <input id="issueid" type="text" class="text-input" 
+                      [(ngModel)] = this.issueid
+                      #Issueid="ngModel" 
+                      
+                      name="issueid" 
+                      placeholder="Enter Issue ID">
+              
+                    <!-- Validation Checks for Fullname. (hasError or errors can be used) -->
+                    <!-- <div class="sign-up-error" *ngIf="Issueid.hasError('required') && Issueid.touched">Title is Mandatory</div> -->
+                  </div>
+                </div>
+
+                   <div class="row">
+                   
+                      <div class="col s12">
+                          <select   name="category" 
+                          [(ngModel)]="selectedValue"
+                          (change)="onChangeCat($event)" 
+                           required class="browser-default">
+                              
+                              <option value="" disabled>Choose a Category</option>
+                              <option *ngFor="let category of categories" [ngValue]="category">
+                                {{ category.description }}
+                              </option>
+                            </select>
+                      </div>
+
+                      </div> 
+                      <div class="row">
+
+                          <div class="col s12">
+                              <select multiple  name="tag" [(ngModel)]="selectedtags" required class="browser-default selecttag">
+                                  <option value="" disabled>Choose a Tag (1 or more relevant)</option>
+                                  <option *ngFor="let tag of tags" [value]="tag">
+                                    {{ tag }}
+                                  </option>
+                                </select>
+                          </div>  
+
+           
+                  </div> 
+               
+                  <div class="row">
+                      
+                    <div class="input-field col s12">
+                        <input id="title" type="text" class="text-input" 
+                        ngModel 
+                        #Title="ngModel" 
+                        
+                        name="title" required
+                        placeholder="Enter Title">
+                
+                      <!-- Validation Checks for Fullname. (hasError or errors can be used) -->
+                      <div class="sign-up-error" *ngIf="Title.hasError('required') && Title.touched">Title is Mandatory</div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="input-field col s12">
+                          <input id="rtitle" type="text" class="text-input" 
+                          ngModel 
+                          #rTitle="ngModel" 
+                         
+                          name="rtitle" required
+                          placeholder="Title in Language Selected">
+                  
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="h2" type="text" class="text-input" 
+                            ngModel 
+                            #H2="ngModel" 
+                           
+                            name="h2" required
+                            placeholder="Sub Title. More about the topic">
+                    
+                        </div>
+                      </div>
+            
+                  <div class="row">
+                      
+                    <div class="input-field col s12">
+                        <input id="description" type="text" class="text-input" 
+                        ngModel 
+                        #Description="ngModel" 
+                        
+                        name="description" required
+                        placeholder="Describe What this article is about">
+                    </div>
+                  </div>
+
+               
+
+
+
+                       <div class="row">
+                          <div class="input-field col s12">
+                    <!--  <simple-tiny
+                      [elementId]="'my-editor-id'"
+                      (onEditorKeyup)="keyupHandlerFunction($event)"
+                      >
+                    </simple-tiny> -->
+
+                    <textarea id="add-editor" name='body' [(ngModel)]="this.selectedbodyvalue" ></textarea>
+
+
+                  </div>
+                </div>
+
+                  <div class="row">
+                      <div class="col m12">
+                          <p class="right-align">
+                          <button class="btn waves-effect waves-light red accent-4 sign-up-field button" type="submit" [disabled]=!f.valid name="action">Submit
+                              <i class="material-icons right">send</i>
+                            </button>
+                          </p>
+                      </div>
+
+                  </div>
+                  <div class="row">
+                        <div class="col m12">
+                        <div class="sign-up-error" *ngIf="responsemsg?.length >0">{{responsemsg}}</div>
+                        </div>
+                  </div>
+
+              </form>
+          </div>
+      </div>
+      
+  </div>
+
+</div>
+

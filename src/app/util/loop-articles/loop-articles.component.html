@@ -1,0 +1,43 @@
+<div class="collumn" >
+    <div class="head">
+        <a class="title" [routerLink]="['/'+link,  article.title + '-'  + article.id | slugify ]">
+          <span class="headline hl3" *ngIf="article.language =='English'; else elseBlock">
+            <h1>{{ article.title }} </h1>
+          </span>
+
+          <ng-template #elseBlock>
+              <h1>{{ article.regionaltitle }}</h1>
+          </ng-template>
+
+        </a>
+    
+        
+
+        <p>
+          <span class="headline hl4"> {{ article.description | shorten: 70: '...'}}</span>
+        </p>
+      </div>
+      <figure class="figure">
+        <a class="title" [routerLink]="['/'+link,  article.title + '-'  + article.id | slugify ]" class="imgwrap">
+          <img class="mediacolor" src="{{this.domain}}{{article.coverimg}}" alt="{{article.title}}" class="imagefit">
+          <div class="overlay"></div>
+        </a>
+        <!-- <figcaption class="figcaption">Keynote Speach by Damodar</figcaption> -->
+      </figure>
+      
+      <div class="topic">
+          <a class="title" [routerLink]="['/topic/',  article.language | slugify, article.category.name | slugify ]">
+            <span class="topicstyle"> {{ article.category.description }}</span>
+          </a>
+      </div>
+
+      <a class="title" [routerLink]="['/'+link,  article.title + '-' + article.id | slugify ]">
+        <p class="descstyle"
+          innerHTML = "{{ article?.body | shorten: 100: '...' }}" >
+        </p>
+        
+      </a>
+      </div>
+      
+      
+      

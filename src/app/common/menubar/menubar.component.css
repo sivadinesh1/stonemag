@@ -1,0 +1,51 @@
+.nav-wrapper {
+    height: 40px !important;
+    line-height: 40px !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+
+nav .button-collapse i {
+    height: 50px;
+    line-height: 50px;
+}
+
+nav {
+    height: 50px;
+    line-height: 50px;
+}
+
+/* Media Queries & Font Sizes */
+
+@media only screen and (min-width: 320px) {
+  
+
+ 
+}
+
+@media only screen and (min-width: 768px) {
+  
+    nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+        height: 45px;
+        line-height: 45px;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+  
+
+}
+
+@media only screen and (min-width: 1280px) {
+    .nav-wrapper {
+        padding-left: 1em;     
+    }
+   
+
+}
+
+
+
+

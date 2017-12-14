@@ -1,0 +1,73 @@
+
+<div id="container">
+  
+    <div class="section topmenu">
+      <div class="row container">
+        <!-- <span class="left-align ">
+              <a routerLink="/"  >
+              <img src="/assets/squapl-magazine-logo-white-mini.png">
+                </a>
+            </span> -->
+  
+        <a class=" button right" role="button" [routerLink]="['auth/sign-up']" width="30" height="30">
+            <span>Sign Up</span>
+            </a>
+  
+        <div class="already right">
+          New to Squapl?
+        </div>
+  
+      </div>
+    </div> <!-- topmenu end -->
+  
+    <div class="signinlabel">
+      SIGN IN TO SQUAPL
+    </div>
+  
+  <div class="sign-up-form">
+      <div class="social-buttons">
+        <a class="facebook-login" role="button" (click)='this.fblogin()' width="30" height="30">
+                  <img src="http://d24vx7b4v625dr.cloudfront.net/facebook-logo.svg" 
+                  width="20px" height="20px" 
+                  alt="Sign in using Facebook">
+              </a>
+  
+        <a class="google-login" role="button" id="googleBtn"  width="30" height="30">
+              <img src="http://d24vx7b4v625dr.cloudfront.net/google-plus-symbol.svg" 
+              width="20px" height="20px"
+              alt="Sign in using gooogle plus">
+              </a>
+      </div>
+  
+      <div class="sign-up-via-email">
+        or via email
+      </div>
+  
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
+      
+        <div class="sign-up-field">
+          <input id="username" type="text" class="text-input" ngModel name="username" required placeholder="Email or username">
+        </div>
+      
+        <div class="sign-up-field">
+          <input id="password" type="password" class="text-input" ngModel name="password" required minlength="7"
+          placeholder="Password">
+        </div>
+      
+        <div class="sign-up-error" *ngIf="responsemsg?.length > 0 ">{{responsemsg}}</div>
+        <button class="btn waves-effect waves-light sign-up-field button  light-blue accent-3" 
+          type="submit" name="action" [disabled]=!f.valid>Sign In
+        </button>
+
+        <div class="row white-text privacy">
+            <p class="white-text center-align">
+              <a routerLink="auth/forgot-pass" class="white-text underline">Forgot username or password?</a> 
+            </p>
+          </div>
+
+        <app-terms-privacy></app-terms-privacy>
+      
+      </form>
+    </div>
+  
+  </div>

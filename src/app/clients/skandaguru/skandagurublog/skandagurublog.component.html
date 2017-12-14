@@ -1,0 +1,16 @@
+<app-header-blog [header]="headers"></app-header-blog>
+<div class="scrollmenu">
+    <a [routerLink]="['/'+sublink]" >முகப்பு</a>
+    <a [routerLink]="['/'+sublink+'/tagaval']" >தகவல்</a>
+    <a [routerLink]="['/'+sublink+'/murugan']" >முருகன்</a>
+    <a [routerLink]="['/'+sublink+'/aanmigam']" >ஆன்மிகம்</a>
+    <a [routerLink]="['/'+sublink+'/sindanaigal']" >சிந்தனைகள்</a>
+    <a [routerLink]="['/'+sublink+'/jadagam']" >ஜாதகம்</a>
+    <a [routerLink]="['/'+sublink+'/arivial-aanmigam']" >அறிவியல் ஆன்மிகம்</a>
+    <a [routerLink]="['/'+sublink+'/yogapairchi']" >யோகா</a>
+    <a [routerLink]="['/'+sublink+'/aanmiga-sutrulla']" >ஆன்மீக சுற்றுலா</a>
+    <a [routerLink]="['/'+sublink+'/vaalkaimurai']" >வாழ்க்கைமுறை</a>
+      </div>
+<app-get-article  [article]="article" [link] = "this.link"></app-get-article> 
+
+

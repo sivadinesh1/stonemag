@@ -1,0 +1,150 @@
+
+.captionfont{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+
+}
+
+.paddingBlock {
+	padding: 0px 0;
+}
+
+
+.imgwrap{
+     display: flex;
+    position: relative;
+    /* align-content: center; */
+  
+    border: 0px solid 000000;
+    background: rgba(0,0,0,0.5);
+    color:#ffffff;
+  
+    align-items: stretch;
+
+
+}
+
+.imagefit {
+    width: 100%;
+    height: 100%;
+}
+
+
+.overlay {
+    display: flex;
+    border: 0px solid green;
+    z-index: 10;
+    position: absolute;
+     text-align: center; 
+    color:#ffffff;
+    width: 100%;
+    height: 100%;
+    /* left: 0; top: 0;  */
+    background: rgba(0,0,0,0.3);
+     justify-content: center; 
+    
+}
+.topic{
+  /* padding: 12px 25px 11px; */
+  padding: 1rem 1rem 1rem;
+  border: 2px solid #fff;
+  font-size: 1.2rem;
+}
+
+/* Media queries for breakpoints */
+
+/* Old smart phones ----------- */
+@media only screen and (min-width : 320px) {
+    font-size: 16px;
+    height: "100%";
+
+
+}
+
+/* Ipad - portraits and few smartphones----------- */
+@media only screen and (min-width : 768px) {    
+        font-size: 18px;
+        height: "100%;";
+}
+
+/* Ipad landscapes ----------- */
+@media only screen and (min-width : 1024px) {
+        font-size: 20px;
+        height: "500px;";
+}
+
+/* Desktops, laptops and large screens ----------- */
+@media only screen and (min-width : 1280px) {
+        font-size: 20px;
+        height: "500px;";
+}
+
+
+
+
+
+
+.eqWrap {
+  display: flex;
+}
+
+/* tbd: added justify content to center align text. it may break things. test it */
+.eq {
+  padding: 1px;
+  justify-content: center;
+}
+
+.eq:nth-of-type(odd) {
+  /* background: yellow; */
+}
+
+.eq:nth-of-type(even) {
+  /* background: lightblue; */
+}
+
+.equalHW {
+  flex: 1;
+}
+
+.equalHMWrap {
+  justify-content: space-between;
+}
+
+.equalHM {
+  width: 32%;
+}
+
+.equalHMRWrap {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.equalHMR {
+  width: 32%;
+  margin-bottom: 2%;
+}
+
+.equalHMVWrap {
+  flex-wrap: wrap;
+}
+
+.equalHMV {
+  width: 32%;
+  margin: 1%;
+}
+
+.equalHMV:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+.equalHMV:nth-of-type(3n+1) {
+  margin-left: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+

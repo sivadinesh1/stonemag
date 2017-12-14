@@ -1,0 +1,37 @@
+
+<div class="section">
+  <div class="row">
+List of Tags: 
+  </div>
+</div>
+
+<div class="section" >
+    <div class="example-header">
+
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+
+      </div>
+  <mat-table [dataSource] = "dataSource" matSort>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+      <mat-cell *matCellDef="let tag" ><a href="">{{tag.id}}</a></mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name</mat-header-cell>
+        <mat-cell *matCellDef="let tag" (click)="onClick($event, tag)"><a href="">{{tag.name}}</a></mat-cell>
+      </ng-container>
+     
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns" (click)="onClick($event, row)"></mat-row>
+  </mat-table>
+
+
+  <mat-paginator #paginator [length]="pageLength"
+  [pageIndex]="pageIndex"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="pageEvent = $event; onPaginateChange($event)"
+  >
+</mat-paginator>
+
+</div>

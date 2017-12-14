@@ -1,0 +1,26 @@
+
+<div class="section">
+  <div class="row">
+<form (ngSubmit)="onSubmit()" #f="ngForm" class="col s12">
+<mat-form-field>
+    <mat-select placeholder="Select Magazine" 
+    name="magazine" 
+    #Magazine="ngModel" 
+    required
+    [(ngModel)]="selectedMagazine">
+      <mat-option *ngFor="let magazine of magazines; trackBy: trackByFn" [value]="magazine.name">
+        {{ magazine.title }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="Magazine.hasError('required')">
+        Magazine is <strong>required</strong>
+    </mat-error> 
+    
+  </mat-form-field>
+<br>
+  
+    <button mat-raised-button [disabled]=!f.valid>Get Articles!</button>
+  
+</form>
+</div>
+</div>

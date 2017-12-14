@@ -1,0 +1,45 @@
+
+<div class="row center-align">
+  <h5>Explore Creative Works {{language}}</h5>
+</div>
+
+
+
+
+<div class="section">
+<div class="row">
+
+
+<!-- Description section 1 of about page -->
+<div class="paddingBlock">
+
+
+    <div class="equalHMVWrap eqWrap">
+        <div *ngFor="let category of categories" class="equalHMV eq">
+            <a class="title" [routerLink]="['/topic/',  this.language, category.name | slugify ]">
+            <div class="imgwrap">
+                <img src="{{this.domain}}{{category.categoryimg}}" alt="{{category.name}}" class="imagefit" >
+
+                <!-- <img src="{{category.categoryimg}}" alt="{{category.name}}" class="imagefit" > -->
+       
+             
+             <div class="overlay valign-wrapper">
+              <span class="topic">
+                {{category.name | uppercase}}
+              </span>
+              </div> 
+            
+            
+           </div>
+           </a>
+
+           
+        </div>
+        
+      </div>
+
+</div>       
+
+
+</div>
+</div>

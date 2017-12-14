@@ -1,0 +1,129 @@
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: baseline;
+}
+a {
+  text-decoration: none;
+}
+.container1 {
+  background-color: #fff;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.story-holder {
+  padding: 36px 36px;
+  margin: 0;
+}
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8em;
+  line-height: 2rem;
+  padding-bottom: 24px;
+  
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  color: #14143b;
+  text-align: center;
+}
+.intro {
+  font-size: 1em;
+  font-family: "Playfair Display", sans-serif;
+  color: #14143b;
+  padding-bottom: 24px;
+  border-bottom: 3px solid #14143b;
+  margin-bottom: 24px;
+  line-height: 1.3;
+  font-style: italic;
+}
+.article {
+  line-height: 1.5;
+}
+.article p {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+@media only screen and (min-width: 400px) {
+  h1 {
+    font-size: 2em;
+  }
+  .intro {
+    font-size: 1.3em;
+  }
+  .article p {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .container1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .story-holder {
+    background: rgba(255, 255, 240, 0.8);
+    margin: 0;
+    width: 50%;
+  }
+  .picture-holder {
+    width: 50%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  h1 {
+    font-size: 2.5em;
+    text-align: left;
+  }
+  .intro {
+    font-size: 1.25em;
+  }
+  .article p {
+    font-size: 1.3em;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  h1 {
+    font-size: 3em;
+    line-height: 3.5rem;
+  }
+}
+
+
+.picture-holder {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  min-height: 300px;
+  
+}
+
+:host ::ng-deep ul {
+  display: block;
+  list-style-type: disc !important;
+}
+
+ul:not(.browser-default)>li {
+  list-style-type: disc;
+}
+ul:not(.browser-default) {
+display: block;
+list-style-type: disc;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}

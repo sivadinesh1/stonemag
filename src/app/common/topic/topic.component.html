@@ -1,0 +1,55 @@
+<div class="section">
+    <div class="row center-align">
+     
+    </div>
+  </div>
+
+<div class="section">
+  <div class="row center-align">
+    <span class="topic">
+    {{category?.description}}
+  </span>
+  </div>
+</div>
+
+
+
+<div class="collumn" *ngFor="let article of articles">
+    <div class="head">
+        <a class="title" [routerLink]="['/magazine/'+article.magname +'/post/',  article.title + '-'  + article.id | slugify ]" >
+          <span class="headline hl3" *ngIf="article.language =='English'; else elseBlock">
+            <h1>{{ article.title }} </h1>
+          </span>
+
+          <ng-template #elseBlock>
+              <h1>{{ article.regionaltitle }}</h1>
+          </ng-template>
+
+        </a>
+    
+        
+
+        <p>
+          <span class="headline hl4"> {{ article.description | shorten: 70: '...'}}</span>
+        </p>
+      </div>
+      <figure class="figure">
+        <a class="title" class="imgwrap">
+          <img class="mediacolor" src="{{this.domain}}{{article.coverimg}}" alt="{{article.title}}" class="imagefit">
+          <div class="overlay"></div>
+        </a>
+        <!-- <figcaption class="figcaption">Keynote Speach by Damodar</figcaption> -->
+      </figure>
+      
+     
+
+      <a class="title" >
+        <p class="descstyle"
+          innerHTML = "{{ article?.body | shorten: 100: '...' }}" >
+        </p>
+        
+      </a>
+      </div>
+      
+      
+      

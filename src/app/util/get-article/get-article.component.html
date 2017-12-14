@@ -1,0 +1,44 @@
+<div class="container1">
+    
+    <!-- <div class="picture-holder" [ngStyle]="{'background-image': 'url(' + this.domain + article?.coverimg + ')'}"></div> -->
+    
+    <div class="picture-holder" [ngStyle]="{'background-image': 'url(' + this.articleimgurl + ')'}"></div>
+
+    <div class="story-holder">
+       <div class="title">
+         <!-- <h1>Out of our minds</h1> -->
+         <h1 *ngIf="article?.language =='English'; else elseBlock"> {{ article?.title }} </h1>
+
+         <ng-template #elseBlock>
+           <h1> {{ article?.regionaltitle }} </h1>
+        </ng-template>
+<!-- {{article?.category.name}} -->
+
+       </div>
+       <div class="intro">
+         <p>{{ article?.description }}</p>
+       </div>
+       <div class="section">
+        <a role="button"  width="20" height="20" [href]="this.articleurl"
+          (click)='this.fbshare()'>
+            <img src="http://d24vx7b4v625dr.cloudfront.net/facebook.svg" 
+            width="20px" height="20px"
+            alt="Share using Facebook">
+        </a>
+        <span>&nbsp;/&nbsp;</span>
+        
+         <a role="button"  width="20" height="20" [href]="this.whatsappurl" >
+          <img src="http://d24vx7b4v625dr.cloudfront.net/whatsapp.svg" 
+          width="20px" height="20px"
+          alt="Share using whatsapp">
+      </a>
+      </div>
+       
+       <!-- <div class="article" [innerHTML] = " article?.body | safe "> -->
+          <div class="article" [innerHTML]="article?.body | safe">
+
+       </div>
+     </div>
+   </div>
+
+   

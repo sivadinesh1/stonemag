@@ -1,0 +1,16 @@
+<app-header-blog [header]="headers"></app-header-blog>
+<div class="scrollmenu">
+    <a [routerLink]="['/magazine/digitalpengal']" >முகப்பு</a>
+    
+    <a [routerLink]="['/samayal']" >சமையல்</a>
+    <a [routerLink]="['/kolam']" >கோலம்</a>
+    <a [routerLink]="['/valkaimurai']">வாழ்க்கைமுறை</a>
+    <a [routerLink]="['/kalai']">கலை</a>  
+    <a [routerLink]="['/chitram']">சித்திரம்</a>
+    <a [routerLink]="['/kavithai']">கவிதை</a>
+  
+        
+      </div>
+<app-get-article  [article]="article" [link] = "this.link"></app-get-article> 
+
+

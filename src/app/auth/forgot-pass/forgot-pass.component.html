@@ -1,0 +1,39 @@
+<div class="section">
+
+</div>
+<div class="section">
+<div class="row ">
+    <div class="center-align headlabel">
+        Forgot Username / Password?
+    </div>
+  </div>
+<br/>
+  <div class="row ">
+      <div class="center-align">
+          <form (ngSubmit)="onSubmit()" #f="ngForm" >
+            <div class="sign-up-field ">
+                <input id="email" type="email" 
+                class="text-input" ngModel required email name="email" 
+                #email="ngModel" placeholder="Email or Username">
+            </div>
+            <div class="sign-up-error" *ngIf="!email.valid && email.touched">Wrong email format</div>
+            <button class="btn waves-effect waves-light sign-up-field button  light-blue accent-3" 
+              type="submit" name="action" [disabled]=!f.valid>Send
+          </button>
+        </form>
+
+      </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="row ">
+        <div class="center-align">
+            <p *ngIf="(emailsent)"> {{this.responsemsg}}</p>
+        </div>
+      </div>
+</div>
+
+<!-- <ng-container *ngIf="(isLoggedIn | async)"  > -->
+
+<!-- <a href="#" class="btn1" (click)='this.recoverauth(password)'>Forgot Password?</a> -->

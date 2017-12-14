@@ -1,0 +1,16 @@
+<app-header-blog [header]="headers"></app-header-blog>
+<div class="scrollmenu">
+  <a [routerLink]="['/magazine/lub']" >Home</a>
+  <a [routerLink]="['/lub/issue/2']" >Issue 2</a>
+  <a [routerLink]="['/']" >Industry 4.0</a>
+  <a [routerLink]="['/']" >Startups</a>
+  <a [routerLink]="['/']" >Interviews</a>
+  <a href="#">Talking Biz</a>
+  <a href="#">IT</a>  
+  <a href="#">Connect</a>
+  <a href="#">Partners</a>
+  <a href="#">Gallery</a>
+</div>
+<app-get-article  [article]="article" [link] = "this.link"></app-get-article> 
+
+

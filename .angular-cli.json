@@ -9,7 +9,8 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+       
+        "robots.txt"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -19,9 +20,27 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        
+        "../node_modules/materialize-css/dist/css/materialize.min.css",            
+        "../node_modules/material-design-icons/iconfont/material-icons.css",
+        
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",  
+        "../node_modules/materialize-css/dist/js/materialize.min.js",  
+        "../src/assets/js/init.js",
+        "../node_modules/tinymce/tinymce.min.js",
+        "../node_modules/tinymce/themes/modern/theme.min.js",
+        "../node_modules/tinymce/plugins/link/plugin.js",
+        "../node_modules/tinymce/plugins/paste/plugin.js",
+        "../node_modules/tinymce/plugins/table/plugin.js",
+        "../node_modules/tinymce/plugins/image/plugin.js",
+        "../node_modules/tinymce/plugins/code/plugin.js",
+        "../node_modules/tinymce/plugins/preview/plugin.js",
+        "../node_modules/tinymce/plugins/media/plugin.js",
+        "../node_modules/tinymce/plugins/lists/plugin.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

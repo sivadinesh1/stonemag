@@ -1,0 +1,20 @@
+<app-header-mag [header]="headers"></app-header-mag>
+<div class="scrollmenu">
+  <a [routerLink]="['/magazine/lub']" >Home</a>
+  <a [routerLink]="['/lub']" >Latest Issue</a>
+  <a [routerLink]="['/']" >Industry 4.0</a>
+  <a [routerLink]="['/']" >Startups</a>
+  <a [routerLink]="['/']" >Interviews</a>
+  <a href="#">Talking Biz</a>
+  <a href="#">IT</a>  
+  <a href="#">Connect</a>
+  <a href="#">Partners</a>
+  <a href="#">Gallery</a>
+  
+</div>
+<div class="content">
+  <div class="collumns">
+    <app-loop-articles *ngFor="let article of articles" [article]="article" [link]="this.link">
+    </app-loop-articles>
+  </div>
+</div> 

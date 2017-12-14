@@ -1,0 +1,57 @@
+
+
+<div class="container">
+  <div class="row">
+      <div class="col m10 offset-m1 s12">
+          <h2 class="center-align">Edit Tag</h2>
+          <div class="row">
+              <form (ngSubmit)="onSubmit()" #f="ngForm" class="col s12">
+              <!-- <form class="col s12"> -->
+               
+                  <div class="row">
+                      
+                    <div class="input-field col s12">
+                        <input id="name" type="text" class="text-input" 
+                        [ngModel] = tag?.name 
+                        #Name="ngModel" 
+                        name="name" required
+                        placeholder="Enter Tag Name">
+                
+                      <!-- Validation Checks for Fullname. (hasError or errors can be used) -->
+                      <div class="sign-up-error" *ngIf="Name.hasError('required') && Name.touched">Tag Name is Mandatory</div>
+                    </div>
+                  </div>
+
+                  
+
+                  <div class="row">
+                      <div class="col m12">
+                          <p class="right-align">
+                          <button class="btn waves-effect waves-light red accent-4 sign-up-field button" type="submit" [disabled]=!f.valid name="action">Submit
+                              <i class="material-icons right">send</i>
+                            </button>
+                          </p>
+                      </div>
+
+                  </div>
+                  <div class="row">
+                        <div class="col m12">
+                        <div class="sign-up-error" *ngIf="responsemsg?.length >0">{{responsemsg}}</div>
+                        </div>
+                  </div>
+
+              </form>
+          </div>
+      </div>
+      
+  </div>
+
+<div class="section">
+  <br>
+  <div class="divider"></div>
+  <br>
+  
+  
+
+</div>
+</div>

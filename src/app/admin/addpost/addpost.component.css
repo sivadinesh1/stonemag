@@ -1,0 +1,23 @@
+/* select {
+    height: 66px;
+    font-size: 14px;
+} */
+
+.sign-up-error {
+    font-size: 12px;
+    line-height: 14px;
+    color: #f03737;
+    padding: 10px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.selecttag {
+    height: 150px;
+    font-size: 14px;
+}
+
+.selectlanguage {
+    height: 66px;
+    font-size: 14px;
+}

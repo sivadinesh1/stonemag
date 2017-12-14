@@ -1,0 +1,104 @@
+<!-- Dropdown Structure -->
+<ul   id="dropdown1" class="dropdown-content black-text">
+    <li *ngIf="(isLoggedIn | async)"><a (click)="removeSideNav($event, 'auth/addpost')" >Add Post</a></li>
+    <li *ngIf="(isLoggedIn | async)"><a (click)="removeSideNav($event, 'auth/listpost')" >List Post</a></li>
+    <li *ngIf="(isLoggedIn | async)"><a (click)="removeSideNav($event, 'auth/addcategory')" >List Category</a></li>
+    <li *ngIf="(isLoggedIn | async)"><a (click)="removeSideNav($event, 'auth/addcategory')" >Add Category</a></li>
+    <li *ngIf="(isLoggedIn | async)"><a (click)="removeSideNav($event, 'auth/addtag')" >Add Tag</a></li>
+    <li *ngIf="(isLoggedIn | async)"><a (click)="removeSideNav($event, 'auth/listtag')" >List Tag</a></li>
+    <li class="divider"></li>
+    <li *ngIf="(isLoggedIn | async)"><a href="#" (click)="onClick($event)">Sign Out</a></li>
+  </ul>
+  
+  
+  <nav class="white">
+    <div class="nav-wrapper">
+  
+      <a [routerLink]="['/']"  class="brand-logo">
+          
+          <img src="http://d24vx7b4v625dr.cloudfront.net/squapl-logo-2.0-v-1.0-black-200x40.png"> 
+        </a>
+  
+      <a href="#"  data-activates="mobile-demo" class="button-collapse black-text"><i class="material-icons">menu</i></a>
+      
+      <ul class="right hide-on-med-and-down">
+  
+          <li >
+            <a class="dropdown-button"  data-activates="dropdown1">
+              <span *ngIf="(isLoggedIn | async)" class="black-text">Admin</span>
+              <i *ngIf="(isLoggedIn | async)" class="material-icons right black-text">arrow_drop_down</i></a>
+          </li>
+  
+        <ng-container *ngIf="(isLoggedIn | async)"  >
+            <a [routerLink]="['/profile', isCurrentUser | async ]"   class="black-text right valign-wrapper hide-on-small-only" >
+              <span class="signin">
+                  {{isCurrentUser | async}}
+              </span>
+                &nbsp;<img src="http://d24vx7b4v625dr.cloudfront.net/user-black.svg" class="valign" width="20px" height="20px">
+            </a> 
+          </ng-container> 
+  
+           <ng-container *ngIf="!(isLoggedIn | async)"  >
+              <a [routerLink]="['auth/sign-in']"   class="black-text right valign-wrapper" >
+                <span class="signin">
+                  Sign In
+                </span>
+                  &nbsp;<img src="http://d24vx7b4v625dr.cloudfront.net/user-black.svg" class="valign" width="20px" height="20px">
+              </a> 
+            </ng-container> 
+        
+      </ul>
+  
+      <ul class="right hide-on-large-only">
+          <ng-container *ngIf="!(isLoggedIn | async)"  >
+              <a [routerLink]="['/auth/sign-in']"   class="black-text right valign-wrapper" >
+                <span class="signin">
+                  Sign In
+                </span>
+                  &nbsp;<img src="http://d24vx7b4v625dr.cloudfront.net/user-black.svg" class="valign" width="20px" height="20px">
+              </a> 
+            </ng-container> 
+      </ul>
+  
+  
+  
+      <ul id="mobile-demo" class="side-nav">
+          <li><div class="user-view">
+            <div class="background">
+              <img src="http://d24vx7b4v625dr.cloudfront.net/auth-bg.webp">
+            </div>
+            <a href="#!user"><img class="circle" src="http://d24vx7b4v625dr.cloudfront.net/auth-bg.webp"></a>
+            <a href="#!name"><span class="white-text name">{{isCurrentUser | async}}</span></a>
+            
+          </div></li>
+          <li><i class="material-icons">cloud</i>Explore</li>
+          <li><a (click)="removeSideNav($event, 'explore/english')" >English Magazines</a></li>
+          <li><a (click)="removeSideNav($event, 'explore/tamil')" >Tamil Magazines</a></li>
+          <li><div class="divider"></div></li>
+          <li><a class="subheader">Admin</a></li>
+          <li *ngIf="(isLoggedIn | async)"><a (click)="removeSideNav($event, 'auth/addpost')" >Add Post</a></li>
+          <li *ngIf="(isLoggedIn | async)"><a (click)="removeSideNav($event, 'auth/listpost')"  >List Post</a></li>
+          <li *ngIf="(isLoggedIn | async)"><a (click)="removeSideNav($event, 'auth/listcategory')" >List Category</a></li>
+          <li *ngIf="(isLoggedIn | async)"><a (click)="removeSideNav($event, 'auth/addcategory')" >Add Category</a></li>
+          <li *ngIf="(isLoggedIn | async)"><a (click)="removeSideNav($event, 'auth/addtag')" >Add Tag</a></li>
+          <li *ngIf="(isLoggedIn | async)"><a (click)="removeSideNav($event, 'auth/listtag')" >List Tag</a></li>
+          <li *ngIf="(isLoggedIn | async)"><a href="#" (click)="onClick($event)">Sign Out</a></li>
+        </ul>
+  
+    </div>
+  </nav>
+          
+   
+
+  
+
+
+  
+
+
+
+
+
+
+
+

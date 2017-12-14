@@ -1,0 +1,40 @@
+
+<div class="section">
+  <div class="row">
+List of Articles for Magazine: {{this.urlpath.magname}}
+  </div>
+</div>
+
+<div class="section" >
+    <div class="example-header">
+
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+
+      </div>
+  <mat-table [dataSource] = "dataSource" matSort>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Id (preview)</mat-header-cell>
+      <mat-cell *matCellDef="let article" (click)="onClickPreview($event, article)"><a href="">{{article.id}}</a></mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Title</mat-header-cell>
+        <mat-cell *matCellDef="let article" (click)="onClick($event, article)"><a href="">{{article.title}}</a></mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="regionaltitle">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Reg. Title</mat-header-cell>
+          <mat-cell *matCellDef="let article" (click)="onClick($event, article)"><a href="">{{article.regionaltitle}}</a></mat-cell>
+        </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns" (click)="onClick($event, row)"></mat-row>
+  </mat-table>
+
+
+  <mat-paginator [length]="pageLength"
+  [pageIndex]="pageIndex"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="pageEvent = $event; onPaginateChange($event)"
+  >
+</mat-paginator>
+
+</div>

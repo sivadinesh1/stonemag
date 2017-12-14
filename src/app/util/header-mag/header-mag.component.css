@@ -1,0 +1,61 @@
+.head{
+    text-align: center;
+    position: relative;
+    background-color: #ffffff;
+
+}
+
+
+
+.headerobjectswrapper{
+}
+
+.subhead{
+    text-transform: uppercase;
+    border-bottom: 2px solid #2f2f2f;
+    border-top: 2px solid #2f2f2f;
+    padding: 12px 0 12px 0;
+
+}
+
+.weatherforcastbox{
+    position: relative;
+    width: 20%;
+    left: 10px;
+    border: 3px double #2f2f2f;
+    padding: 10px 15px 10px 15px;
+    line-height: 20px;
+    display: inline-block;
+    margin: 0 50px 20px -360px;
+}
+
+/*________________________________________________________________________________________________________________________________*/
+/*MEDIAQUERIES*/
+@media only all and (max-width: 1300px) {
+    .weatherforcastbox{
+        display: none;
+    }
+
+}
+
+@media only all and (max-width: 600px) {
+  
+    header{
+        max-width: 320px;
+        font-size: 50px;
+        line-height: 54px;
+        overflow: hidden;
+    }
+
+}
+
+header{
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 2.7rem;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 52px;
+    margin-bottom: 10px;
+
+}

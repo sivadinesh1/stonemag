@@ -1,0 +1,19 @@
+<app-header-mag [header]="headers"></app-header-mag>
+<div class="scrollmenu">
+    <a [routerLink]="['/'+sublink]" >முகப்பு</a>
+    <a [routerLink]="['/'+sublink+'/samayal']" >சமையல்</a>
+    <a [routerLink]="['/'+sublink+'/kolam']" >கோலம்</a>
+    <a [routerLink]="['/'+sublink+'/valkaimurai']" >வாழ்க்கைமுறை</a>
+    <a [routerLink]="['/'+sublink+'/kalai']" >கலை</a>
+    <a [routerLink]="['/'+sublink+'/chitram']" >சித்திரம்</a>
+    <a [routerLink]="['/'+sublink+'/kavithai']" >கவிதை</a>
+  
+  
+</div>
+<div class="content">
+  <div class="collumns">
+    <app-loop-articles *ngFor="let article of articles;trackBy: trackByFn" [article]="article" [link] = "this.link">
+    </app-loop-articles>
+  </div>
+</div>
+
